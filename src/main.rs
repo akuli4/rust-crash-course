@@ -1,25 +1,18 @@
 #![deny(clippy::all)]
 
+#[derive(PartialEq)]
+enum Direction {
+    North,
+    West,
+    South,
+    East,
+}
+
 fn main() {
-    #[derive(Debug)]
-    struct Point(f32, f32, f32);
+    // Enums are useful when it comes to related objects.
+    let direction = Direction::North;
 
-    impl Point {
-        // Non method associated function
-        fn zero() -> Point {
-            Point(0.0, 0.0, 0.0)
-        }
+    if direction == Direction::North {
+        println!("Heading North!");
     }
-
-    impl Point {
-        // fn twice(&self) -> Point {
-        //     Point(self.0 * 2.0, self.1 * 2.0, self.2 * 2.0)
-        // }
-    }
-
-    let x = Point::zero();
-    let y = Point::zero();
-    let z = Point::zero();
-
-    println!("x: {:?}, y: {:?}, z: {:?}", x, y, z);
 }
