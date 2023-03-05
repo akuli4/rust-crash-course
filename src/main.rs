@@ -1,7 +1,7 @@
 #![deny(clippy::all)]
 
 fn main() {
-    let say_hello = |name: &str| format!("Hello, {}", name);
+    let full_name = |first_name: &str, last_name: &str| format!("{} {}", first_name, last_name);
 
-    println!("{}", say_hello("Alan"));
+    println!("{}", full_name("John", "Travolta"))
 }
