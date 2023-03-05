@@ -1,31 +1,19 @@
 #![deny(clippy::all)]
 
-struct Size {
-    width: u32,
-    height: u32,
+enum Pet {
+    Cat { name: String },
+    Dog { name: String },
 }
-
-enum Shapes {
-    Rectangle(u32, u32, Size),
-}
-
-impl Shapes {
-    fn area(&self) -> u32 {
-        match self {
-            Shapes::Rectangle(_x, _y, size) => size.width * size.height,
-        }
-    }
-}
-
 fn main() {
-    let rect = Shapes::Rectangle(
-        20,
-        21,
-        Size {
-            width: 5,
-            height: 7,
-        },
-    );
+    let bobby = Pet::Cat {
+        name: "Bobby".to_string(),
+    };
+    // How to extract pets name?
+    // match is an expression
+    let name = match bobby {
+        Pet::Cat { name } => name,
+        Pet::Dog { name } => name,
+    };
 
-    println!("Area: {}", rect.area());
+    println!("Name is {}", name);
 }
