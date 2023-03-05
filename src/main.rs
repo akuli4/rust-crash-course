@@ -1,7 +1,7 @@
 #![deny(clippy::all)]
 
 fn main() {
-    let full_name = |first_name: &str, last_name: &str| format!("{} {}", first_name, last_name);
+    let multiply_by_2 = |num: i32| num * 2;
 
-    println!("{}", full_name("John", "Travolta"))
+    println!("{}", multiply_by_2(2))
 }
