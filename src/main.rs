@@ -1,10 +1,14 @@
 #![deny(clippy::all)]
 
-#[derive(PartialEq)]
+struct Size {
+    width: u32,
+    height: u32,
+}
+
 enum Shapes {
     Circle { radius: u32, center: (i32, i32) },
     Triangle { base: u32, height: u32 },
-    Rectangle { left_side: u32, right_side: u32 },
+    Rectangle { dimensions: Size },
     Point(i32, i32, i32),
 }
 
@@ -17,9 +21,11 @@ fn main() {
         base: 10,
         height: 20,
     };
-    let rectangle = Shapes::Rectangle {
-        left_side: 6,
-        right_side: 8,
+    let rect = Shapes::Rectangle {
+        dimensions: Size {
+            width: 20,
+            height: 30,
+        },
     };
     let point = Shapes::Point(2, 3, 4);
 
