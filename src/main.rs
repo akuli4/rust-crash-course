@@ -1,11 +1,7 @@
 #![deny(clippy::all)]
 
-fn generate_hello_statement(string: &str) -> String {
-    format!("Hi, {}!", string)
-}
-
 fn main() {
-    let bar = generate_hello_statement("Alan");
+    let say_hello = |name: &str| format!("Hello, {}", name);
 
-    println!("{}", bar)
+    println!("{}", say_hello("Alan"));
 }
