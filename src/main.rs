@@ -10,9 +10,11 @@ enum Direction {
 
 fn main() {
     // Enums are useful when it comes to related objects.
-    let direction = Direction::North;
+    let direction = Direction::East;
 
-    if direction == Direction::North {
-        println!("Heading North!");
+    match direction {
+        Direction::North => println!("Heading North"),
+        // Default case
+        _ => println!("Where am I?"),
     }
 }
