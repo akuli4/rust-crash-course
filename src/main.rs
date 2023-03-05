@@ -18,23 +18,10 @@ fn main() {
         right_side: 8,
     };
 
-    if let Shapes::Circle { radius: 20 } = circle {
-        println!("Circle Match")
-    }
-
-    if let Shapes::Triangle {
-        base: 10,
-        height: 12,
-    } = triangle
-    {
-        println!("Tringle Match")
-    }
-
-    if let Shapes::Rectangle {
-        left_side: 6,
-        right_side: 8,
-    } = rectangle
-    {
-        println!("React Match")
+    match circle {
+        Shapes::Circle { radius: 20 } => {
+            println!("Circle Match")
+        }
+        _ => println!("Not Covered"),
     }
 }
