@@ -6,8 +6,15 @@ struct Size {
 }
 
 enum Shapes {
-    Circle { radius: u32, center: (i32, i32) },
     Rectangle(u32, u32, Size),
+}
+
+impl Shapes {
+    fn area(&self) -> u32 {
+        match self {
+            Shapes::Rectangle(_x, _y, size) => size.width * size.height,
+        }
+    }
 }
 
 fn main() {
@@ -15,12 +22,10 @@ fn main() {
         20,
         21,
         Size {
-            width: 2,
-            height: 3,
+            width: 5,
+            height: 7,
         },
     );
 
-    if let Shapes::Rectangle(x, y, Size { width, height }) = rect {
-        println!("Match! {} {} {} {}", x, y, width, height)
-    };
+    println!("{}", format_args!("{}", rect.area()));
 }
