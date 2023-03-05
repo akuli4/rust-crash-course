@@ -5,6 +5,7 @@ enum Shapes {
     Circle { radius: u32 },
     Triangle { base: u32, height: u32 },
     Rectangle { left_side: u32, right_side: u32 },
+    Point(i32, i32, i32),
 }
 
 fn main() {
@@ -17,6 +18,7 @@ fn main() {
         left_side: 6,
         right_side: 8,
     };
+    let point = Shapes::Point(2, 3, 4)
 
     match circle {
         Shapes::Circle { radius: 20 } => {
