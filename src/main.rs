@@ -7,35 +7,20 @@ struct Size {
 
 enum Shapes {
     Circle { radius: u32, center: (i32, i32) },
-    Triangle { base: u32, height: u32 },
-    Rectangle { dimensions: Size },
-    Point(i32, i32, i32),
+    Rectangle(u32, u32, Size),
 }
 
 fn main() {
-    let circle = Shapes::Circle {
-        radius: 20,
-        center: (20, 20),
-    };
-    let triangle = Shapes::Triangle {
-        base: 10,
-        height: 20,
-    };
-    let rect = Shapes::Rectangle {
-        dimensions: Size {
-            width: 20,
-            height: 30,
+    let rect = Shapes::Rectangle(
+        20,
+        21,
+        Size {
+            width: 2,
+            height: 3,
         },
-    };
-    let point = Shapes::Point(2, 3, 4);
+    );
 
-    match circle {
-        Shapes::Circle {
-            radius: 20,
-            center: (20, 20),
-        } => {
-            println!("Circle Match")
-        }
-        _ => println!("Not Covered"),
-    }
+    if let Shapes::Rectangle(x, y, Size { width, height }) = rect {
+        println!("Match! {} {} {} {}", x, y, width, height)
+    };
 }
