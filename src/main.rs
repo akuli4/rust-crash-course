@@ -27,5 +27,5 @@ fn main() {
         },
     );
 
-    println!("{}", format_args!("{}", rect.area()));
+    println!("Area: {}", rect.area());
 }
