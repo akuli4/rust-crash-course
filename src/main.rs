@@ -1,17 +1,32 @@
 #![deny(clippy::all)]
 
 fn main() {
-    struct Point(f32, f32, f32);
-    impl Point {
-        fn double(&mut self) {
-            self.0 *= 2.0;
-            self.1 *= 2.0;
-            self.2 *= 2.0;
+    struct User {
+        first_name: String,
+        family_name: String,
+        picture_url: String,
+    }
+    impl User {
+        fn full_name(&self) -> String {
+            format!("{} {}", self.first_name, self.family_name)
         }
     }
+    let user1 = User {
+        first_name: "Darth".to_string(),
+        family_name: "Vader".to_string(),
+        picture_url: "https://akamai.darth-vader-pics.bruh/a29aDMas9dsl".to_string(),
+    };
 
-    let mut x = Point(2.0, 10.0, 3.0);
-    x.double();
-
-    println!("Point: ({}, {}, {})", x.0, x.1, x.2);
+    println!(
+        "
+            first_name: {},
+            family_name: {},
+            picture_url: {}
+            full_name: {}
+        ",
+        user1.first_name,
+        user1.family_name,
+        user1.picture_url,
+        user1.full_name()
+    );
 }
