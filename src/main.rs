@@ -1,7 +1,7 @@
 #![deny(clippy::all)]
 
 fn main() {
-    let multiply_by_2 = |num: i32| num * 2;
+    let calculate_bmi = |weight: f32, height: f32| weight / height.powf(2.0);
 
-    println!("{}", multiply_by_2(2))
+    println!("Your bmi is - {:.2}", calculate_bmi(70.0, 1.86));
 }
