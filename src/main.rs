@@ -10,7 +10,7 @@ fn main() {
        The pointer is at the end after first iteration and stays there.
     */
     let values = vec![2, 4, 2, 1];
-    let iter = values.iter();
-    let sum1: i32 = iter.sum();
-    let sum2: i32 = iter.sum(); // use of a moved value
+    let mapped: Vec<i32> = values.iter().map(|x| x + 2).collect();
+
+	// map returns a Map, to turn it into iterable, use collect() method
 }
