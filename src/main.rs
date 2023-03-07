@@ -6,9 +6,6 @@ fn main() {
     let mut user: HashMap<&str, &str> = HashMap::new();
     user.insert("foo", "bar");
 
-    if user.contains_key("foo") {
-        println!("Something...")
-    } else {
-        println!("Empty")
-    };
+    user.remove("foo");
+	
 }
