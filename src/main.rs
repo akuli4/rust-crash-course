@@ -7,7 +7,5 @@ fn main() {
     user.insert("foo", "bar");
     user.insert("boo", "far");
 
-    for (&k, &v) in &user {
-        println!("key: {}, value: {}", k, v);
-    }
+    let entry = user.entry("foo"); // entry.key(), entry.into()
 }
