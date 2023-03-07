@@ -1,12 +1,11 @@
 #![deny(clippy::all)]
 
 fn main() {
-    // Dynamic sized vector of string slices.
-    let vector = vec![2, 3];
-    //or
-    let mut vector = Vec::new();
+    let mut vec1 = vec![1, 2, 3];
+    let mut vec2 = vec![4, 5, 6];
 
-    vector.extend_from_slice(&[2, 10, 20]);
+    // Move values from vec2 to vec1
+    vec1.append(&mut vec2);
 
-    let mapped = vector.iter().map(|x| x * 2);
+    // vec2 is empty now
 }
