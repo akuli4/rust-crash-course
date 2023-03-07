@@ -1,27 +1,12 @@
 #![deny(clippy::all)]
 
-use std::collections::HashMap;
-
-#[derive(Hash, Eq, PartialEq, Debug)]
-struct User {
-    id: i128,
-    firs_name: String,
-    family_name: String,
-}
 fn main() {
-    // Hash maps are not enabled by default, we need to import them.
-    let mut users: HashMap<i128, User> = HashMap::new();
-
-    users.insert(
-        0,
-        User {
-            id: 0,
-            firs_name: "Anna".to_string(),
-            family_name: "Karenina".to_string(),
-        },
-    );
-
-    let first_user = users.get(&0);
-
-    // Make sure each key that you provide is hashable.
+    /*
+       Iterators are lazy, they need to be consumed before can be user.
+       In rust a for loop automatically consumes and iterator.
+    */
+    let values = vec![2, 4, 2, 1];
+    for value in values.iter() {
+        println!("{}", value);
+    }
 }
