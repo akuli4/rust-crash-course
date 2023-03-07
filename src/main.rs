@@ -21,4 +21,6 @@ fn main() {
     );
 
     let first_user = users.get(&0);
+
+    // Make sure each key that you provide is hashable.
 }
