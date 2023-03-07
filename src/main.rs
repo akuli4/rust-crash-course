@@ -6,5 +6,8 @@ fn main() {
     let mut user: HashMap<&str, &str> = HashMap::new();
     user.insert("foo", "bar");
 
-    let foo = user.get("foo");
+    match user.get("foo") {
+        Some(value) => println!("{}", value),
+        None => println!("Not Found"),
+    }
 }
