@@ -6,9 +6,7 @@ fn main() {
     //or
     let mut vector = Vec::new();
 
-    vector.push(42);
-    vector.push(32);
-    vector.push(10);
+    vector.extend_from_slice(&[2, 10, 20]);
 
     let mapped = vector.iter().map(|x| x * 2);
 }
