@@ -6,6 +6,5 @@ fn main() {
     let mut user: HashMap<&str, &str> = HashMap::new();
     user.insert("foo", "bar");
 
-    user.remove("foo");
-	
+    let foo = user.get("foo");
 }
