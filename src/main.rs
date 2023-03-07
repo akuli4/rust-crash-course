@@ -2,7 +2,7 @@
 
 fn main() {
     // Fix sized vector of string slices.
-    let vector: [&str; 2] = ["foo", "bar"];
+    let vector: [i32; 2] = [2, 3];
 
-    let len = vector.len();
+    let mapped = vector.iter().map(|x| x * 2);
 }
