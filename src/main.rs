@@ -8,6 +8,8 @@ fn main() {
        Iterators cannot be double-consumed.
 
        The pointer is at the end after first iteration and stays there.
+
+	   .iter() allows you to work with references from an itrable.
     */
     let values = vec![2, 4, 2, 1];
     let mapped: Vec<i32> = values.iter().map(|x| x + 2).collect();
