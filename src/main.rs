@@ -8,4 +8,11 @@ fn main() {
     user.insert("boo", "far");
 
     let entry = user.entry("foo"); // entry.key(), entry.into()
+
+    match entry {
+        std::collections::hash_map::Entry::Occupied(mut o) => {
+            o.get_mut();
+        }
+        _ => {}
+    }
 }
