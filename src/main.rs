@@ -2,6 +2,7 @@
 
 use std::collections::HashMap;
 
+#[derive(Hash, Eq, PartialEq, Debug)]
 struct User {
     id: i128,
     firs_name: String,
